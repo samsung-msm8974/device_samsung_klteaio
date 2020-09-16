@@ -31,12 +31,9 @@
 #include <android-base/logging.h>
 #include <android-base/properties.h>
 
-#include "property_service.h"
-
 #include "init_msm8974.h"
 
 using android::base::GetProperty;
-using android::init::property_set;
 
 void vendor_load_properties()
 {
@@ -53,7 +50,7 @@ void vendor_load_properties()
     } else if (bootloader.find("S902L") == 0) {
         /* kltetfnvzw - SM-S902L - TracFone Verizon MVNO */
         property_override("ro.build.description", "kltetfnvzw-user 4.4.2 KOT49H S902LUDUAOD3 release-keys");
-        property_set("ro.telephony.get_imsi_from_sim", "true");
+        property_override("ro.telephony.get_imsi_from_sim", "true");
         set_ro_product_prop("device", "kltetfnvzw");
         set_ro_product_prop("fingerprint", "samsung/kltetfnvzw/kltetfnvzw:4.4.2/KOT49H/S902LUDUAOD3:user/release-keys");
         set_ro_product_prop("model", "SM-S902L");
