@@ -25,6 +25,10 @@ $(call inherit-product, vendor/samsung/klteaio/klteaio-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Display Device Config
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/displayconfig/klte/display_id_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_0.xml
+
 # Fingerprint
 $(call inherit-product, device/samsung/msm8974-common/fingerprint/product.mk)
 
