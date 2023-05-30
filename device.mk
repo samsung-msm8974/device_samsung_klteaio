@@ -24,10 +24,10 @@ $(call inherit-product, vendor/samsung/klteaio/klteaio-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Fingerprint
-$(call inherit-product, device/samsung/klte-common/fingerprint/product.mk)
+$(call inherit-product, device/samsung/msm8974-common/fingerprint/product.mk)
 
 # NFC
-$(call inherit-product, device/samsung/klte-common/nfc/pn547/product.mk)
+$(call inherit-product, device/samsung/msm8974-common/nfc/pn547/product.mk)
 
-# common klte
-$(call inherit-product, device/samsung/klte-common/klte.mk)
+# common msm8974
+$(call inherit-product, device/samsung/msm8974-common/klte.mk)

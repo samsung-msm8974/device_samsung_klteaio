@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # inherit from common klte
-include device/samsung/klte-common/BoardConfigCommon.mk
+include device/samsung/msm8974-common/BoardConfigCommon.mk
 
 TARGET_OTA_ASSERT_DEVICE := klte,klteaio,kltetfnvzw
 
