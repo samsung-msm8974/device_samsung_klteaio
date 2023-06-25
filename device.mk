@@ -17,8 +17,6 @@
 
 COMMON_PATH := device/samsung/msm8974-common
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/samsung/klteaio/klteaio-vendor.mk)
 
