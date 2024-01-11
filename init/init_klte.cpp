@@ -43,7 +43,7 @@ void vendor_load_properties()
         /* klteaio - Cricket MVNO */
         property_override("ro.build.description", "kltetu-user 5.0 LRX21T G900AZTUS3BQD1 release-keys");
         set_ro_product_prop("device", "klteaio");
-        set_ro_product_prop("fingerprint", "samsung/kltetu/klteaio:5.0/LRX21T/G900AZTUS3BQD1:user/release-keys");
+        set_ro_product_prop("build.fingerprint", "samsung/kltetu/klteaio:5.0/LRX21T/G900AZTUS3BQD1:user/release-keys");
         set_ro_product_prop("model", "SM-G900AZ");
         set_ro_product_prop("name", "klteaio");
         gsm_properties("9", "gsm");
@@ -52,7 +52,7 @@ void vendor_load_properties()
         property_override("ro.build.description", "kltetfnvzw-user 4.4.2 KOT49H S902LUDUAOD3 release-keys");
         property_override("ro.telephony.get_imsi_from_sim", "true");
         set_ro_product_prop("device", "kltetfnvzw");
-        set_ro_product_prop("fingerprint", "samsung/kltetfnvzw/kltetfnvzw:4.4.2/KOT49H/S902LUDUAOD3:user/release-keys");
+        set_ro_product_prop("build.fingerprint", "samsung/kltetfnvzw/kltetfnvzw:4.4.2/KOT49H/S902LUDUAOD3:user/release-keys");
         set_ro_product_prop("model", "SM-S902L");
         set_ro_product_prop("name", "kltetfnvzw");
         cdma_properties("TracFone", "310000", "0", "10", "vzw");

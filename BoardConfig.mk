@@ -13,19 +13,43 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+DEVICE_PATH := device/samsung/klteaio
+COMMON_PATH := device/samsung/msm8974-common
+
 # inherit from common klte
 include device/samsung/msm8974-common/BoardConfigCommon.mk
 
-TARGET_OTA_ASSERT_DEVICE := klte,klteaio,kltetfnvzw
+# Bluetooth
+BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/vnd_klte.txt
+BOARD_HAVE_SAMSUNG_BLUETOOTH := true
+
+# Build Fingerprint
+BUILD_FINGERPRINT := samsung/kltetu/klteaio:5.0/LRX21T/G900AZTUS3BQD1:user/release-keys
 
 # Kernel
 TARGET_KERNEL_CONFIG := lineage_klte_pn547_defconfig
 
-# Fingerprint
-include $(COMMON_PATH)/fingerprint/board.mk
+# OTA
+TARGET_OTA_ASSERT_DEVICE := klte,klteaio,kltetfnvzw
+
+# Partition
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2411724800
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 2411724800
+
+# Properties
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
+# Recovery
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../$(COMMON_PATH)/recovery/recovery_keys.c
+
+# Include
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/klte-include
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_klteaio
+
+# Fingerprint
+include $(COMMON_PATH)/fingerprint/board.mk
 
 # NFC
 include $(COMMON_PATH)/nfc/pn547/board.mk
@@ -35,3 +59,4 @@ include $(COMMON_PATH)/radio/single/board.mk
 
 # inherit from the proprietary version
 include vendor/samsung/klteaio/BoardConfigVendor.mk
+include vendor/samsung/klte-common/BoardConfigVendor.mk
