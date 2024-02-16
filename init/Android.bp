@@ -18,11 +18,11 @@
 cc_library_static {
     name: "libinit_klteaio",
     recovery_available: true,
-    srcs: ["init_klte.cpp"],
+    srcs: ["init_klteaio.cpp"],
     include_dirs: [
-        "device/samsung/msm8974-common/init",
-        "system/core/init",
-        "system/libbase/include"
+        "system/core/init"
     ],
-    whole_static_libs: ["libinit_helpers_sam8974"]
+    shared_libs: [
+        "libbase",
+    ]
 }
